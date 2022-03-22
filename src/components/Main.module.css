@@ -1,0 +1,11 @@
+@media only screen and (min-width: 600px) {
+  .main {
+    color: rgb(11, 54, 11);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    color: black;
+  }
+}
