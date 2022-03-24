@@ -1,15 +1,17 @@
-import { useState } from "react";
 import styles from "./Nav.module.css";
-import {Link} from "../index";
+import { Link, LanguageDropdown } from "../index";
 
-function Nav() {
+function Nav({ setLanguage, language }) {
   const links = ["start", "pricing", "about", "contact"];
   return (
     <nav className={styles.nav}>
       <ul className={styles.links}>
         {links.map((link, index) => (
-        <Link text={link} key={index.toString()} id={index.toString()} />
+          <Link text={link} key={index.toString()} id={index.toString()} />
         ))}
+        <li>
+          <LanguageDropdown setLanguage={setLanguage} language={language} />
+        </li>
       </ul>
     </nav>
   );
