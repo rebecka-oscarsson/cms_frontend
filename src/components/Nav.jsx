@@ -1,20 +1,23 @@
 import styles from "./Nav.module.css";
-import { Link, LanguageDropdown } from "../index";
+import { NavLink, LanguageDropdown } from "../index";
 
-function Nav({ setLanguage, language }) {
-  const links = ["start", "pricing", "about", "contact"];
-  return (
+function Nav({ setLanguage, language, content }) {
+  
+  if (content && Object.keys(content).length > 0)
+  {return (
     <nav className={styles.nav}>
       <ul className={styles.links}>
-        {links.map((link, index) => (
-          <Link text={link} key={index.toString()} id={index.toString()} />
+        
+        {content.map((page, index) => (
+          <NavLink pageId={page.attributes.PageId} text={page.attributes.Name} key={index.toString()} />
         ))}
         <li>
           <LanguageDropdown setLanguage={setLanguage} language={language} />
         </li>
       </ul>
     </nav>
-  );
+  );}
+  else return null
 }
 
 export default Nav;

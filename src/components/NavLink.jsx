@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavLink({ text, id }) {
+function NavLink({ pageId, text, id }) {
   return (
     <li key={id}>
-      <Link to={text === "start" ? "/" : "/" + text}>{text}</Link>
+      <Link to={pageId === "start" ? "/" : "/" + pageId}>{text}</Link>
     </li>
   );
 }
