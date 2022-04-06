@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Main.module.css";
+import "./Main.module.css";
 import { Routes, Route } from "react-router-dom";
 import { Start, Pricing, Contact, Page } from "../index";
 
@@ -28,7 +28,7 @@ function Main({
     Object.keys(pricingContent).length > 0
   ) {
     return (
-      <main className={styles.main}>
+      <main >
         <Routes>
           <Route
             exact

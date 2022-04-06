@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./normalize.css";
-import "./App.css";
+import "./App.scss";
 import { useFetch, Main, Nav } from "./index";
 
 function App() {
