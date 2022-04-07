@@ -7,10 +7,17 @@ function App() {
   const [language, setLanguage] = useState(
     localStorage.getItem("language") || "en"
   );
-  let pagesUrl = `http://localhost:1337/api/pages/?locale=${language}&sort=SortOrder:asc`;
-  let startUrl = `http://localhost:1337/api/start/?locale=${language}`;
-  let pricingUrl = `http://localhost:1337/api/pricing/?locale=${language}`;
-  let contactUrl = `http://localhost:1337/api/contact/?locale=${language}`;
+  // let pagesUrl = `http://localhost:1337/api/pages/?locale=${language}&sort=SortOrder:asc`;
+  // let startUrl = `http://localhost:1337/api/start/?locale=${language}`;
+  // let pricingUrl = `http://localhost:1337/api/pricing/?locale=${language}`;
+  // let contactUrl = `http://localhost:1337/api/contact/?locale=${language}`;
+
+  let pagesUrl = `https://spraakteknik.herokuapp.com/api/pages/?locale=${language}&sort=SortOrder:asc`;
+  let startUrl = `https://spraakteknik.herokuapp.com/api/start/?locale=${language}`;
+  let pricingUrl = `https://spraakteknik.herokuapp.com/api/pricing/?locale=${language}`;
+  let contactUrl = `https://spraakteknik.herokuapp.com/api/contact/?locale=${language}`;
+
+  
 
   const [content, loading, error] = useFetch(pagesUrl);
   const [startContent, startLoading, startError] = useFetch(startUrl);
