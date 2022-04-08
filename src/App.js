@@ -7,15 +7,20 @@ function App() {
   const [language, setLanguage] = useState(
     localStorage.getItem("language") || "en"
   );
-  // let pagesUrl = `http://localhost:1337/api/pages/?locale=${language}&sort=SortOrder:asc`;
-  // let startUrl = `http://localhost:1337/api/start/?locale=${language}`;
-  // let pricingUrl = `http://localhost:1337/api/pricing/?locale=${language}`;
-  // let contactUrl = `http://localhost:1337/api/contact/?locale=${language}`;
 
-  let pagesUrl = `https://spraakteknik.herokuapp.com/api/pages/?locale=${language}&sort=SortOrder:asc`;
-  let startUrl = `https://spraakteknik.herokuapp.com/api/start/?locale=${language}`;
-  let pricingUrl = `https://spraakteknik.herokuapp.com/api/pricing/?locale=${language}`;
-  let contactUrl = `https://spraakteknik.herokuapp.com/api/contact/?locale=${language}`;
+  const strapiUrl = process.env.REACT_APP_STRAPI_URL;
+  console.log(process.env)
+
+
+  let pagesUrl = `${strapiUrl}pages/?locale=${language}&sort=SortOrder:asc`;
+  let startUrl = `${strapiUrl}start/?locale=${language}`;
+  let pricingUrl = `${strapiUrl}pricing/?locale=${language}`;
+  let contactUrl = `${strapiUrl}contact/?locale=${language}`;  console.log(pagesUrl);
+
+  // let pagesUrl = `https://spraakteknik.herokuapp.com/api/pages/?locale=${language}&sort=SortOrder:asc`;
+  // let startUrl = `https://spraakteknik.herokuapp.com/api/start/?locale=${language}`;
+  // let pricingUrl = `https://spraakteknik.herokuapp.com/api/pricing/?locale=${language}`;
+  // let contactUrl = `https://spraakteknik.herokuapp.com/api/contact/?locale=${language}`;
 
   
 
