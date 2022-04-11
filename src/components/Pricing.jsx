@@ -7,7 +7,7 @@ function Pricing({ pageName, content, loading, error }) {
   if (error) return "nääj det blev feeel";
   if (content && Object.keys(content).length > 0)
     //det här borde inte behöva vara här. varför blir content undefined? utan att det är loading eller error?
-    return <div className={pageName}><ReactMarkdown>{content.Description}</ReactMarkdown></div>;
+    return <div className={pageName}><ReactMarkdown>{content.attributes.Description}</ReactMarkdown></div>;
 }
 
 export default Pricing;

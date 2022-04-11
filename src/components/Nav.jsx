@@ -26,16 +26,19 @@ function Nav({
             pageId={startContent.attributes.Page_id}
             text={startContent.attributes.Page_name}
             key={startContent.attributes.Page_id}
+            language={language}
           />
           <NavLink
             pageId={pricingContent.attributes.Page_id}
             text={pricingContent.attributes.Page_name}
             key={pricingContent.attributes.Page_id}
+            language={language}
           />
           <NavLink
             pageId={contactContent.attributes.Page_id}
             text={contactContent.attributes.Page_name}
             key={contactContent.attributes.Page_id}
+            language={language}
           />
 
           {content.map((page, index) => (
@@ -43,6 +46,7 @@ function Nav({
               pageId={page.attributes.Page_id}
               text={page.attributes.Page_name}
               key={index.toString()}
+              language={language}
             />
           ))}
           <li>

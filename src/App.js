@@ -2,36 +2,37 @@ import { useState, useEffect } from "react";
 import "./normalize.css";
 import "./App.scss";
 import { useFetch, Main, Nav } from "./index";
+import { useSearchParams } from "react-router-dom";
+
 
 function App() {
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+
   const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "en"
+    searchParams.get("lang") || localStorage.getItem("language") || "en"
   );
 
   const strapiUrl = process.env.REACT_APP_STRAPI_URL;
-  console.log(process.env)
 
 
-  let pagesUrl = `${strapiUrl}pages/?locale=${language}&sort=SortOrder:asc`;
+  let pagesUrl = `${strapiUrl}pages/?locale=${language}`
+  // &sort=SortOrder:asc;
   let startUrl = `${strapiUrl}start/?locale=${language}`;
   let pricingUrl = `${strapiUrl}pricing/?locale=${language}`;
-  let contactUrl = `${strapiUrl}contact/?locale=${language}`;  console.log(pagesUrl);
+  let contactUrl = `${strapiUrl}contact/?locale=${language}`;
 
-  // let pagesUrl = `https://spraakteknik.herokuapp.com/api/pages/?locale=${language}&sort=SortOrder:asc`;
-  // let startUrl = `https://spraakteknik.herokuapp.com/api/start/?locale=${language}`;
-  // let pricingUrl = `https://spraakteknik.herokuapp.com/api/pricing/?locale=${language}`;
-  // let contactUrl = `https://spraakteknik.herokuapp.com/api/contact/?locale=${language}`;
 
-  
-
-  const [content, loading, error] = useFetch(pagesUrl);
   const [startContent, startLoading, startError] = useFetch(startUrl);
   const [pricingContent, pricingLoading, pricingError] = useFetch(pricingUrl);
   const [contactContent, contactLoading, contactError] = useFetch(contactUrl);
+  const [content, loading, error] = useFetch(pagesUrl);
 
   useEffect(() => {
-    localStorage.setItem("language", language);
+    localStorage.setItem("language", language); setSearchParams(`lang=${language}`)
   }, [language]);
+
 
   return (
     <>
@@ -56,6 +57,7 @@ function App() {
         contactContent={contactContent}
         contactLoading={contactLoading}
         contactError={contactError}
+        language={language}
       />
     </>
   );

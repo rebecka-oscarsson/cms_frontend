@@ -6,7 +6,7 @@ function Start({ content, loading, error }) {
   if (error) return "nääj det blev feeel";
   if (content && Object.keys(content).length > 0)
     //det här borde inte behöva vara här. varför blir content undefined? utan att det är loading eller error?
-    return <div className="start"><h2>{content.Headline}</h2>{content.Presentation}</div>;
+    return <div className="start"><h2>{content.attributes.Headline}</h2>{content.attributes.Presentation}</div>;
     else return null
 }
 
