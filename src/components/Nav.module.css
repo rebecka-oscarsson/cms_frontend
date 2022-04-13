@@ -1,6 +1,0 @@
-.nav {background: goldenrod}
-.links {display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    padding-left: 0;
-justify-content: space-evenly;}

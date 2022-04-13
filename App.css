@@ -1,11 +1,10 @@
 body {
-  font-family: "Roboto", sans-serif;
-  margin: 30px;
-  color: #282c34;
+  font-family: 'Lato', sans-serif;
+  background-color: #282c34;
 }
 
-h2 {
-  font-family: "Source Sans Pro", sans-serif;
+h1, h2 {
+  font-family: 'Cutive Mono', monospace;
   text-align: left;
 }
 /*# sourceMappingURL=App.css.map */
