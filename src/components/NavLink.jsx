@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./Nav.module.scss";
 
-function NavLink({ pageId, text, id, language }) {
+function NavLink({ pageId, text, id, language, closeMobileMenu, onMouseEnter, onMouseLeave }) {
   return (
     <li key={id}>
-      <Link to={pageId === "start" ? `/?lang=${language}` : `/${pageId}?lang=${language}`}>{text}</Link>
+      <Link to={`/${pageId}?lang=${language}`} onClick={closeMobileMenu} className={styles.navlinks}>{text}</Link>
     </li>
   );
 }
