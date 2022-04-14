@@ -43,7 +43,7 @@
 
 .navlinks:hover {
   background-color: palevioletred;
-  border-radius: 0;
+
 }
 
 .menuicon {
@@ -83,17 +83,34 @@
     border: none;
   }
 
+  .navlinks:hover {background-color: transparent;}
+
+  /* Underline styles 
+  From: https://css-irl.info/animating-underlines/*/
   .navlinks {
     width: auto;
-    display: table;
-    text-decoration: none;
-    padding: 1em;
+    display: block;
+    position: relative;
+    padding: 0.5em 0.5em;
   }
 
-  .navlinks:hover {
-    background-color: rgb(162, 62, 62);
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
+  /* Fade in, Scale from center */
+  .navlinks::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: hotpink;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: opacity 300ms, transform 300ms;
+  }
+  .navlinks:hover::after,
+  .navlinks:focus::after {
+    transform: scale(1);
   }
 
   .menuicon {
