@@ -16,13 +16,12 @@ function Main({
   contactContent,
   contactLoading,
   contactError,
-  language,
 }) {
   
   // const urlLanguage = useLocation().pathname.split('/')[1];
   // console.log(urlLanguage)
   return (
-    <main>
+    <>
       <Routes>
         <Route
           path={`/`}
@@ -71,7 +70,7 @@ function Main({
             ))
           : null}
       </Routes>
-    </main>
+    </>
   );
 }
 

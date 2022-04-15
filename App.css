@@ -1,6 +1,26 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Lato', sans-serif;
-  background-color: lightgray;
+  background-color: #cbd5de;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+main {
+  overflow: auto;
+  padding: 40px;
 }
 
 h1, h2 {

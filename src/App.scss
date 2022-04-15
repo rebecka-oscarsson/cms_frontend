@@ -1,12 +1,17 @@
 @import './variables.scss';
 
-body {
-  
+html{margin:0; padding:0;}
+
+body { 
 font-family: 'Lato', sans-serif;
-  background-color: $primary
+  background-color: $primary;
+  margin:0; padding:0;
 }
 
-h1, h2 {font-family: 'Cutive Mono', monospace;
-  
+#root {min-height: 100vh; margin:0; padding:0; display: grid; grid-template-rows: auto 1fr;}
+
+main {overflow: auto; padding: 40px}
+
+h1, h2 {font-family: 'Cutive Mono', monospace; 
   text-align: left;
 }

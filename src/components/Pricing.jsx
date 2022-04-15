@@ -3,11 +3,11 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 //problem: css:en kommer krascha om man byter namn på sidan
 function Pricing({ pageName, content, loading, error }) {
-  if (loading) return "loading";
-  if (error) return "nääj det blev feeel";
+  if (loading) return <main>loading</main>;
+  if (error) return <main>error</main>;
   if (content && Object.keys(content).length > 0)
     //det här borde inte behöva vara här. varför blir content undefined? utan att det är loading eller error?
-    return <div className={pageName}><ReactMarkdown>{content.attributes.Description}</ReactMarkdown></div>;
+    return <main className={pageName}><ReactMarkdown>{content.attributes.Description}</ReactMarkdown></main>;
 }
 
 export default Pricing;
