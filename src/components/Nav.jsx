@@ -1,5 +1,5 @@
 import styles from "./Nav.module.scss";
-import { NavLink, LanguageDropdown } from "../index";
+import { NavLink, LanguageSelect } from "../index";
 import logo from "../images/Spraakteknik.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -45,13 +45,12 @@ function Nav({
         </div>
 
         <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`}>
-          <li>
-            <LanguageDropdown
+          
+            <LanguageSelect
               setLanguage={setLanguage}
               language={language}
               closeMobileMenu={closeMobileMenu}
             />
-          </li>
 
           <NavLink
             pageId={startContent.attributes.Page_id}

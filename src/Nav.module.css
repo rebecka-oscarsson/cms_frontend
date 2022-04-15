@@ -4,6 +4,7 @@
   justify-content: space-between;
   background: white;
   box-sizing: border-box;
+  text-transform: lowercase;
 }
 
 .navmenu {

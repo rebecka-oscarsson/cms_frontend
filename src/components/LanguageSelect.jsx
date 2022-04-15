@@ -1,6 +1,7 @@
 import React from "react";
+import "./LanguageSelect.module.scss";
 
-function LanguageDropdown({ setLanguage, language, closeMobileMenu }) {
+function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
   const languages = [
     { code: "en", name: "english" },
     { code: "sv", name: "svenska" },
@@ -11,7 +12,7 @@ function LanguageDropdown({ setLanguage, language, closeMobileMenu }) {
   const handleChange = (e) => {setLanguage(e.target.value); closeMobileMenu()};
 
   return (
-    <div>
+      <li>
       <label htmlFor="languages">Show site in </label>
       <select
         name="languages"
@@ -25,8 +26,8 @@ function LanguageDropdown({ setLanguage, language, closeMobileMenu }) {
           </option>
         ))}
       </select>
-    </div>
+  </li>
   );
 }
 
-export default LanguageDropdown;
+export default LanguageSelect;

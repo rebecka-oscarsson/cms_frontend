@@ -1,10 +1,11 @@
+@import '../variables.scss';
+
 .navbar {
   height: 80px;
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: $secondary;
   box-sizing: border-box;
-  text-transform: lowercase;
 }
 
 .navmenu {
@@ -31,19 +32,6 @@
 .navmenu.active {
   height: calc(100vh - 80px);
   transition: height 0.7s ease;
-}
-
-.navlinks {
-  text-align: center;
-  width: 100vw;
-  display: table;
-  text-decoration: none;
-  padding: 1em;
-}
-
-.navlinks:hover {
-  background-color: palevioletred;
-
 }
 
 .menuicon {
@@ -81,36 +69,6 @@
     height: auto;
     width: auto;
     border: none;
-  }
-
-  .navlinks:hover {background-color: transparent;}
-
-  /* Underline styles 
-  From: https://css-irl.info/animating-underlines/*/
-  .navlinks {
-    width: auto;
-    display: block;
-    position: relative;
-    padding: 0.5em 0.5em;
-  }
-
-  /* Fade in, Scale from center */
-  .navlinks::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.2em;
-    background-color: hotpink;
-    opacity: 1;
-    transform: scale(0);
-    transform-origin: center;
-    transition: opacity 300ms, transform 300ms;
-  }
-  .navlinks:hover::after,
-  .navlinks:focus::after {
-    transform: scale(1);
   }
 
   .menuicon {

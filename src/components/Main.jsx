@@ -1,5 +1,5 @@
 import React from "react";
-import "./Main.module.css";
+import "./Main.module.scss";
 import { Routes, Route } from "react-router-dom";
 import { Start, Pricing, Contact, Page } from "../index";
 

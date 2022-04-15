@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,EAAE,CAAC;EAAC,OAAO,EAAE,IAAI;EAAE,cAAc,EAAE,MAAM;CAAG",
+    "sources": [
+        "src/components/LanguageSelect.module.scss"
+    ],
+    "names": [],
+    "file": "LanguageSelect.module.css"
+}

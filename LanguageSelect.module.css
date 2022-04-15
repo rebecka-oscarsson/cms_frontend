@@ -1,0 +1,9 @@
+li {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: small;
+}
+/*# sourceMappingURL=LanguageSelect.module.css.map */

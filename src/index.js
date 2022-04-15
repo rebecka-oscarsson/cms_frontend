@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 export { default as Nav } from "./components/Nav";
-export { default as LanguageDropdown } from "./components/LanguageDropdown";
+export { default as LanguageSelect } from "./components/LanguageSelect";
 export { default as NavLink } from "./components/NavLink";
 export { default as Start } from "./components/Start";
 export { default as Main } from "./components/Main";

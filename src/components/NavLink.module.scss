@@ -1,0 +1,52 @@
+@import '../variables.scss';
+
+.navlink {
+  text-align: center;
+  width: 100vw;
+  display: table;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.navlink:hover {
+  background-color: $cta;
+}
+
+@media screen and (min-width: 960px) {
+  
+  .navlink:hover {background-color: transparent;}
+
+  /* Underline styles 
+  From: https://css-irl.info/animating-underlines/*/
+  .navlink {
+    width: auto;
+    display: block;
+    position: relative;
+    padding: 0.5em 0.5em;
+  }
+
+  .navlink:hover {
+    color: $cta;
+  }
+
+  /* Fade in, Scale from center */
+  .navlink::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: $cta;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: opacity 300ms, transform 300ms;
+  }
+  .navlink:hover::after,
+  .navlink:focus::after {
+    transform: scale(1);
+  }
+}
