@@ -13,7 +13,7 @@ function Start({ content, loading, error }) {
         <h2>{content.attributes.Headline}</h2>
         <p>{content.attributes.Presentation}</p>
         <button>{content.attributes.Button_text}</button>
-        <img src="https://res.cloudinary.com/dc39bw2wz/image/upload/v1649946049/sthlm_cc9bbd58a4.svg" alt=""></img>
+        
       </main>
     );
   else return null;
