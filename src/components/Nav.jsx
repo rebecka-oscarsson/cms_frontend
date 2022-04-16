@@ -19,7 +19,7 @@ function Nav({
     setMenuOpen(false);
   };
 
-  if (
+  const everythingLoaded =
     content &&
     startContent &&
     pricingContent &&
@@ -27,8 +27,42 @@ function Nav({
     Object.keys(content).length > 0 &&
     Object.keys(startContent).length > 0 &&
     Object.keys(contactContent).length > 0 &&
-    Object.keys(pricingContent).length > 0
-  ) {
+    Object.keys(pricingContent).length > 0;
+
+    let navlinks = null;
+
+    if (everythingLoaded) {navlinks = <><NavLink
+      pageId={startContent.attributes.Page_id}
+      text={startContent.attributes.Page_name}
+      key={startContent.attributes.Page_id}
+      language={language}
+      closeMobileMenu={closeMobileMenu}
+    />
+    <NavLink
+      pageId={pricingContent.attributes.Page_id}
+      text={pricingContent.attributes.Page_name}
+      key={pricingContent.attributes.Page_id}
+      language={language}
+      closeMobileMenu={closeMobileMenu}
+    />
+    <NavLink
+      pageId={contactContent.attributes.Page_id}
+      text={contactContent.attributes.Page_name}
+      key={contactContent.attributes.Page_id}
+      language={language}
+      closeMobileMenu={closeMobileMenu}
+    />
+    {content.map((page, index) => (
+      <NavLink
+        pageId={page.attributes.Page_id}
+        text={page.attributes.Page_name}
+        key={index.toString()}
+        language={language}
+        closeMobileMenu={closeMobileMenu}
+      />
+    ))}</>}
+
+  
     return (
       <nav className={styles.navbar}>
         <Link to={`/?lang=${language}`}>
@@ -46,47 +80,16 @@ function Nav({
 
         <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`}>
           
-            <LanguageSelect
-              setLanguage={setLanguage}
-              language={language}
-              closeMobileMenu={closeMobileMenu}
-            />
-
-          <NavLink
-            pageId={startContent.attributes.Page_id}
-            text={startContent.attributes.Page_name}
-            key={startContent.attributes.Page_id}
+          <LanguageSelect
+            setLanguage={setLanguage}
             language={language}
             closeMobileMenu={closeMobileMenu}
           />
-          <NavLink
-            pageId={pricingContent.attributes.Page_id}
-            text={pricingContent.attributes.Page_name}
-            key={pricingContent.attributes.Page_id}
-            language={language}
-            closeMobileMenu={closeMobileMenu}
-          />
-          <NavLink
-            pageId={contactContent.attributes.Page_id}
-            text={contactContent.attributes.Page_name}
-            key={contactContent.attributes.Page_id}
-            language={language}
-            closeMobileMenu={closeMobileMenu}
-          />
-
-          {content.map((page, index) => (
-            <NavLink
-              pageId={page.attributes.Page_id}
-              text={page.attributes.Page_name}
-              key={index.toString()}
-              language={language}
-              closeMobileMenu={closeMobileMenu}
-            />
-          ))}
+          {navlinks}
         </ul>
       </nav>
     );
-  } else return null;
-}
+  }
+
 
 export default Nav;

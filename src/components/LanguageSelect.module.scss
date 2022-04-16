@@ -1,2 +1,6 @@
 li {display: flex; flex-direction: column;}
 label{font-size: small;}
+
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+  li {margin-right: auto}
+}

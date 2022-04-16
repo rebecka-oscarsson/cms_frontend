@@ -6,4 +6,10 @@ li {
 label {
   font-size: small;
 }
+
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+  li {
+    margin-right: auto;
+  }
+}
 /*# sourceMappingURL=LanguageSelect.module.css.map */

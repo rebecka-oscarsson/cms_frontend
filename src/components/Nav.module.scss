@@ -63,7 +63,7 @@
   .navmenu {
     flex-direction: row;
     justify-content: space-around;
-    flex-grow: 0.5;
+    min-width: 50vw;
     position: relative;
     top: auto;
     height: auto;
