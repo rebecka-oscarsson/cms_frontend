@@ -1,9 +1,8 @@
 import React from "react";
-import "./Main.module.scss";
 import { Routes, Route } from "react-router-dom";
-import { Start, Pricing, Contact, Page } from "../index";
+import { Start, Pricing, Contact, Page } from "../../index";
 
-function Main({
+function PageRoutes({
   content,
   loading,
   error,
@@ -18,8 +17,6 @@ function Main({
   contactError,
 }) {
   
-  // const urlLanguage = useLocation().pathname.split('/')[1];
-  // console.log(urlLanguage)
   return (
     <>
       <Routes>
@@ -74,4 +71,4 @@ function Main({
   );
 }
 
-export default Main;
+export default PageRoutes;

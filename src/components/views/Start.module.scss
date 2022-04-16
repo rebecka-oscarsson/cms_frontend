@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
 .start {background-image: url("https://res.cloudinary.com/dc39bw2wz/image/upload/v1649946049/sthlm_cc9bbd58a4.svg"), radial-gradient($secondary, $primary); background-size: contain; background-position: 0 125%; background-repeat: no-repeat; text-align: center;}
 button {border-radius:10px; border: 3px solid black; padding: 1em; background-color: gold; text-transform: uppercase;}

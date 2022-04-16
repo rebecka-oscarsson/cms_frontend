@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "AAAA,AAAA,EAAE,CAAC;EAAC,OAAO,EAAE,IAAI;EAAE,cAAc,EAAE,MAAM;CAAG;;AAC5C,AAAA,KAAK,CAAA;EAAC,SAAS,EAAE,KAAK;CAAG;;AAEzB,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,WAAW,EAAE,SAAS;EACnE,AAAA,EAAE,CAAC;IAAC,YAAY,EAAE,IAAI;GAAE",
     "sources": [
-        "src/components/LanguageSelect.module.scss"
+        "src/components/Nav/LanguageSelect.module.scss"
     ],
     "names": [],
     "file": "LanguageSelect.module.css"
