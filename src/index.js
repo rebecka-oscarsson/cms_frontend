@@ -12,6 +12,7 @@ export { default as Main } from "./components/views/PageRoutes";
 export { default as Contact } from "./components/views/Contact";
 export { default as Pricing } from "./components/views/Pricing";
 export { default as Page } from "./components/views/Page";
+export { default as Spinner } from "./components/views/Spinner";
 export { default as useFetch } from "./hooks/useFetch";
 
 ReactDOM.render(
