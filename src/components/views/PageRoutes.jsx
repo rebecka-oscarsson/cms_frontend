@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Start, Pricing, Contact, Page } from "../../index";
+import { Start, Pricing, Contact, Page, Error, Spinner } from "../../index";
 
 function PageRoutes({
   content,
@@ -15,6 +15,7 @@ function PageRoutes({
   contactContent,
   contactLoading,
   contactError,
+  language
 }) {
   
   return (
@@ -27,6 +28,7 @@ function PageRoutes({
               content={startContent}
               loading={startLoading}
               error={startError}
+              language={language}
             />
           }
         />
@@ -66,6 +68,8 @@ function PageRoutes({
               />
             ))
           : null}
+          {content && Object.keys(content).length > 0
+          ? <Route path="*" element={<Error />} />: <Route path="*" element={<Spinner />} />}
       </Routes>
     </>
   );

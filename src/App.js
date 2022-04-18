@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./normalize.css";
 import "./App.scss";
-import { useFetch, Main, Nav } from "./index";
+import { useFetch, PageRoutes, Nav } from "./index";
 import { useSearchParams } from "react-router-dom";
 
 function App() {
@@ -13,9 +13,12 @@ function App() {
     searchParams.get("lang") || localStorage.getItem("language") || "en"
   );
 
-  const strapiUrl = process.env.REACT_APP_STRAPI_URL;
+  const remoteUrl = "https://spraakteknik.herokuapp.com/api/"
+  let strapiUrl = process.env.REACT_APP_STRAPI_URL;
+  strapiUrl = remoteUrl //for testing locally with remote data
+  
 
-  let pagesUrl = `${strapiUrl}pages/?locale=${language}`;
+  let pagesUrl = `${strapiUrl}pages/?sort=SortOrder&locale=${language}`;
   let startUrl = `${strapiUrl}start/?locale=${language}`;
   let pricingUrl = `${strapiUrl}pricing/?locale=${language}`;
   let contactUrl = `${strapiUrl}contact/?locale=${language}`;
@@ -43,7 +46,8 @@ function App() {
         contactContent={contactContent}
         pricingContent={pricingContent}
       />
-      <Main
+    
+      <PageRoutes
         content={content}
         loading={loading}
         error={error}
