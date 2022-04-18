@@ -79,13 +79,13 @@ function Nav({
         </div>
 
         <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`}>
-          
+           {navlinks}
           <LanguageSelect
             setLanguage={setLanguage}
             language={language}
             closeMobileMenu={closeMobileMenu}
           />
-          {navlinks}
+         
         </ul>
       </nav>
     );
