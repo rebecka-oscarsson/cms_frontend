@@ -9,9 +9,12 @@ const useFetch = (url) => {
     const fetchContent = async () => {
       setLoading(true);
       setContent(null)
-      setError(false); //behövs denna?
+      setError(false);
       try {
         const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error("page missing");
+        }
         const json = await res.json();
         setContent(json.data);
         setLoading(false);
