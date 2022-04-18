@@ -26,10 +26,12 @@
     display: block;
     position: relative;
     padding: 0.5em 0.5em;
+    transition: color 300ms;
   }
 
   .navlink:hover {
     color: $cta;
+    transition: color 300ms;
   }
 
   /* Fade in, Scale from center */
