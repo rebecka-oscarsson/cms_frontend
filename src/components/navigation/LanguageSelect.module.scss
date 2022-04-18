@@ -1,6 +1,27 @@
-li {display: flex; flex-direction: column;}
-label{font-size: small;}
+.languageselect {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+}
+label {
+  font-size: small;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+select {
+  padding: 0.2em;
+  margin-top: 0.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+// option {
+//   background-image: url("../../images/sweden-flag.png");
+// }
+//funkar ej
 
 @media only screen and (min-width: 600px) and (orientation: landscape) {
-  li {margin-right: auto}
+  .languageselect {
+    margin-left: auto;
+    justify-self: auto;
+  }
 }

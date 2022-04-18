@@ -5,6 +5,19 @@ li {
 
 label {
   font-size: small;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+select {
+  padding: 0.2em;
+  margin-top: 0.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+option {
+  background-image: url("../../images/sweden-flag.png");
 }
 
 @media only screen and (min-width: 600px) and (orientation: landscape) {

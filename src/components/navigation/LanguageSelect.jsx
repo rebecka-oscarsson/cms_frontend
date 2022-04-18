@@ -1,5 +1,5 @@
 import React from "react";
-import "./LanguageSelect.module.scss";
+import styles from "./LanguageSelect.module.scss";
 
 function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
   const languages = [
@@ -12,8 +12,8 @@ function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
   const handleChange = (e) => {setLanguage(e.target.value); closeMobileMenu()};
 
   return (
-      <li>
-      <label htmlFor="languages">Show site in </label>
+      <li className ={styles.languageselect}>
+      <label htmlFor="languages">Site language </label>
       <select
         name="languages"
         id="languages"
@@ -21,7 +21,7 @@ function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
         value={language}
       >
         {languages.map((languageObject, index) => (
-          <option value={languageObject.code} key={index.toString()}>
+          <option value={languageObject.code} key={index.toString()} id={languageObject.code}>
             {languageObject.name}
           </option>
         ))}
