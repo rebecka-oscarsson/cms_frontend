@@ -1,13 +1,13 @@
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Spinner, Error } from "../../index";
 
 //problem: css:en kommer krascha om man byter namn på sidan
-function Pricing({ pageName, content, loading, error }) {
-  if (loading) return <main>loading</main>;
-  if (error) return <main>error</main>;
+function Pricing({ content, loading, error }) {
+  if (loading) return <Spinner />;
+  if (error) return <Error />;
   if (content && Object.keys(content).length > 0)
-    //det här borde inte behöva vara här. varför blir content undefined? utan att det är loading eller error?
-    return <main className={pageName}><ReactMarkdown>{content.attributes.Description}</ReactMarkdown></main>;
+    return <main><ReactMarkdown>{content.attributes.Description}</ReactMarkdown></main>;
 }
 
 export default Pricing;
