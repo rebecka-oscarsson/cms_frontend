@@ -1,23 +1,38 @@
 @import "../../variables.scss";
 
 .start {
-  background-image: url("https://res.cloudinary.com/dc39bw2wz/image/upload/v1649946049/sthlm_cc9bbd58a4.svg"),
-    radial-gradient($secondary, $primary);
+  background-image: url("../../images/sthlm_small.svg"),
+    radial-gradient($light_color, $primary_color);
   background-size: contain;
-  background-position: 0 125%;
+  background-position: 0 100%;
   background-repeat: no-repeat;
-  text-align: center;
   max-width: 100%;
   margin: 0;
 }
+
+.start_container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60%;
+  justify-content: space-between;
+}
+
 .linkbutton {
   border-radius: 10px;
-  border: 3px solid black;
+  border: 3px solid $dark_color;
   padding: 1em;
-  background-color: gold;
+  background-color: $cta_color;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 @media screen and (min-width: 960px) {
+  .start {
+    background-image: url("../../images/sthlm.svg");
+  }
+  .start_container {
+    min-height: 40%;
+  }
 }

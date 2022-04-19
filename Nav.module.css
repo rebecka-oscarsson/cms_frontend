@@ -2,6 +2,7 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: white;
   box-sizing: border-box;
 }
@@ -13,6 +14,7 @@
   box-sizing: border-box;
   margin: 0;
   padding-left: 0;
+  text-indent: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,24 +32,24 @@
 .navmenu.active {
   height: calc(100vh - 80px);
   transition: height 0.7s ease;
+  padding-bottom: 2em;
 }
 
 .menuicon {
   display: block;
   font-size: 1.8rem;
   cursor: pointer;
-  margin: 20px 20px 0 0;
+  margin: 0 20px;
 }
 
 .fa-times {
-  color: #fff;
   font-size: 2rem;
 }
 
 .logo {
-  max-width: 15vw;
+  max-width: 35vw;
   justify-self: start;
-  margin: 20px 0 0 20px;
+  margin: 0 10px;
   cursor: pointer;
 }
 
@@ -60,7 +62,7 @@
   .navmenu {
     flex-direction: row;
     justify-content: space-around;
-    min-width: 50vw;
+    min-width: 40vw;
     position: relative;
     top: auto;
     height: auto;
@@ -69,6 +71,10 @@
   }
   .menuicon {
     display: none;
+  }
+  .logo {
+    max-width: 15vw;
+    margin: 20px 0 0 20px;
   }
 }
 /*# sourceMappingURL=Nav.module.css.map */

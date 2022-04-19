@@ -11,12 +11,13 @@ function Start({ content, loading, error, language }) {
   if (content && Object.keys(content).length > 0)
     return (
       <main className={styles.start}>
-        <h2>{content.attributes.Headline}</h2>
+        <div className={styles.start_container}>
+        <h1>{content.attributes.Headline}</h1>
         <p>{content.attributes.Presentation}</p>
         <Link to={`/pricing?lang=${language}`}>
         <button className={styles.linkbutton}>{content.attributes.Button_text}</button>
         </Link>
-        
+        </div>
       </main>
     );
   else return null;

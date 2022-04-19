@@ -13,6 +13,10 @@
   background-color: tomato;
 }
 
+.navlink:active {
+  background-color: tomato;
+}
+
 @media screen and (min-width: 960px) {
   .navlink:hover {
     background-color: transparent;

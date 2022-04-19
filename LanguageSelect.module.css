@@ -1,4 +1,4 @@
-li {
+.languageselect {
   display: flex;
   flex-direction: column;
 }
@@ -16,13 +16,10 @@ select {
   font-weight: bold;
 }
 
-option {
-  background-image: url("../../images/sweden-flag.png");
-}
-
 @media only screen and (min-width: 600px) and (orientation: landscape) {
-  li {
-    margin-right: auto;
+  .languageselect {
+    margin-left: auto;
+    justify-self: auto;
   }
 }
 /*# sourceMappingURL=LanguageSelect.module.css.map */

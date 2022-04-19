@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EAAC,OAAO,EAAE,IAAI;CAAG",
+    "sources": [
+        "src/components/views/Error.module.scss"
+    ],
+    "names": [],
+    "file": "Error.module.css"
+}
