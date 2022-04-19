@@ -1,16 +1,32 @@
 h1 {
   font-family: 'Cutive Mono', monospace;
-  font-size: xx-large;
+  font-size: 3rem;
   font-weight: bold;
+  line-height: 1.75rem;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
-  font-size: large;
+  font-size: 1.75rem;
   font-weight: bold;
+  line-height: 1.75rem;
 }
 
 body {
+  font-size: 1rem;
   font-family: 'Lato', sans-serif;
+  line-height: 1.75rem;
+}
+
+@media screen and (min-width: 960px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  body {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=typography.css.map */

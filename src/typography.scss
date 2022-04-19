@@ -2,12 +2,30 @@
 
 h1 {font-family: 'Cutive Mono', monospace; 
     font-size: $largest; font-weight: bold;
+    line-height: $large;
   }
 
 h2 {font-family: 'Lato', sans-serif;
     font-size: $large; font-weight: bold;
+    line-height: $large;
   }
 
-  body { 
+body {
+  font-size: $normal;
     font-family: 'Lato', sans-serif;
-    }
+    line-height: $large;
+}
+
+@media screen and (min-width: 960px) {
+  h1 {
+    font-size: $largest;
+  }
+
+h2 {
+    font-size: $large;  
+  }
+
+body { 
+    font-size: $normal;
+}
+}
