@@ -8,7 +8,9 @@
   text-transform: uppercase;
   font-weight: bold;
   padding: 1em;
-  color: $dark_color;;
+  color: $dark_color;
+  text-indent: 0;
+  margin-left: 0;
 }
 
 .navlink:hover {
