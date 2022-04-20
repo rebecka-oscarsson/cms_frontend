@@ -14,11 +14,11 @@
 }
 
 .navlink:hover {
-  background-color: $accent_color;
+  background-color: $cta_color;
 }
 
 .navlink:active {
-  background-color: $accent_color;
+  background-color: $cta_color;
 }
 
 @media screen and (min-width: 768px) {
@@ -36,7 +36,7 @@
   }
 
   .navlink:hover {
-    color: $cta_color;
+    color: $accent_color;
     transition: color 300ms;
   }
 
