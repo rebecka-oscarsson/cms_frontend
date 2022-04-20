@@ -8,9 +8,9 @@
   text-transform: uppercase;
   font-weight: bold;
   padding: 1em;
+  margin: 0 0.5em;
   color: $dark_color;
   text-indent: 0;
-  margin-left: 0;
 }
 
 .navlink:hover {
@@ -21,7 +21,7 @@
   background-color: $accent_color;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 768px) {
   
   .navlink:hover {background-color: transparent;}
 
@@ -36,7 +36,7 @@
   }
 
   .navlink:hover {
-    color: $accent_color;
+    color: $cta_color;
     transition: color 300ms;
   }
 

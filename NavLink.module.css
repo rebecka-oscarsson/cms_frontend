@@ -6,9 +6,9 @@
   text-transform: uppercase;
   font-weight: bold;
   padding: 1em;
+  margin: 0 0.5em;
   color: black;
   text-indent: 0;
-  margin-left: 0;
 }
 
 .navlink:hover {
@@ -19,7 +19,7 @@
   background-color: tomato;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 768px) {
   .navlink:hover {
     background-color: transparent;
   }
@@ -33,7 +33,7 @@
     transition: color 300ms;
   }
   .navlink:hover {
-    color: tomato;
+    color: gold;
     transition: color 300ms;
   }
   /* Fade in, Scale from center */

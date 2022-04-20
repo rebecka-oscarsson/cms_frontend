@@ -10,13 +10,11 @@ label {
 }
 select {
   padding: 0.2em;
-  
   text-transform: uppercase;
   font-weight: bold;
 }
 
-
-@media only screen and (min-width: 600px) and (orientation: landscape) {
+@media only screen and (min-width: 992px) {
   .languageselect {
     margin-left: auto;
     justify-self: auto;

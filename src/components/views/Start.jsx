@@ -12,8 +12,10 @@ function Start({ content, loading, error, language }) {
     return (
       <main className={styles.start}>
         <div className={styles.start_container}>
+        <div>
         <h1>{content.attributes.Headline}</h1>
         <p>{content.attributes.Presentation}</p>
+        </div>
         <Link to={`/pricing?lang=${language}`}>
         <button className={styles.linkbutton}>{content.attributes.Button_text}</button>
         </Link>

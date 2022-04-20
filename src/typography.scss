@@ -16,7 +16,7 @@ body {
     line-height: $large;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: $largest;
   }

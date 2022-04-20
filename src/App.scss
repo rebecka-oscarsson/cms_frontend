@@ -1,6 +1,10 @@
 @import './variables.scss';
 @import './typography.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 html{margin:0; padding:0;}
 
 body { 
