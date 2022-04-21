@@ -19,77 +19,95 @@ function Nav({
     setMenuOpen(false);
   };
 
-  const everythingLoaded =
-    customPagesContent &&
-    startContent &&
-    pricingContent &&
-    contactContent &&
-    Object.keys(customPagesContent).length > 0 &&
-    Object.keys(startContent).length > 0 &&
-    Object.keys(contactContent).length > 0 &&
-    Object.keys(pricingContent).length > 0;
+  const customPagesLoaded =
+    customPagesContent && Object.keys(customPagesContent).length > 0;
 
-    let navlinks = null;
+  const startLoaded = startContent && Object.keys(startContent).length > 0;
 
-    if (everythingLoaded) {navlinks = <><NavLink
-      pageId={startContent.attributes.Page_id}
-      text={startContent.attributes.Page_name}
-      key={startContent.attributes.Page_id}
-      language={language}
-      closeMobileMenu={closeMobileMenu}
-    />
-    <NavLink
-      pageId={pricingContent.attributes.Page_id}
-      text={pricingContent.attributes.Page_name}
-      key={pricingContent.attributes.Page_id}
-      language={language}
-      closeMobileMenu={closeMobileMenu}
-    />
-    <NavLink
-      pageId={contactContent.attributes.Page_id}
-      text={contactContent.attributes.Page_name}
-      key={contactContent.attributes.Page_id}
-      language={language}
-      closeMobileMenu={closeMobileMenu}
-    />
-    {customPagesContent.map((page, index) => (
-      <NavLink
-        pageId={page.attributes.Page_id}
-        text={page.attributes.Page_name}
-        key={index.toString()}
-        language={language}
-        closeMobileMenu={closeMobileMenu}
-      />
-    ))}</>}
-  
-    return (
-      <nav className={styles.navbar}>
-        <Link to={`/?lang=${language}`}>
-          <img
-            src={logo}
-            alt="start"
-            className={styles.logo}
-            onClick={closeMobileMenu}
-            width="601px"
-            height="72px"
-          />
-        </Link>
+  const pricingLoaded =
+    pricingContent && Object.keys(pricingContent).length > 0;
 
-        <div className={styles.menuicon} onClick={handleClick} role="button" aria-expanded={menuOpen} aria-controls="menu" aria-label="open menu">
-          <i className={menuOpen ? "fas fa-times" : "fas fa-bars"} aria-hidden="true"/>
-        </div>
+  const contactLoaded =
+    contactContent && Object.keys(contactContent).length > 0;
 
-        <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`} role="menu" id="menu">
-           {navlinks}
-          <LanguageSelect
-            setLanguage={setLanguage}
+  return (
+    <nav className={styles.navbar}>
+      <Link to={`/?lang=${language}`}>
+        <img
+          src={logo}
+          alt="start"
+          className={styles.logo}
+          onClick={closeMobileMenu}
+          width="601px"
+          height="72px"
+        />
+      </Link>
+
+      <div
+        className={styles.menuicon}
+        onClick={handleClick}
+        role="button"
+        aria-expanded={menuOpen}
+        aria-controls="menu"
+        aria-label="open menu"
+      >
+        <i
+          className={menuOpen ? "fas fa-times" : "fas fa-bars"}
+          aria-hidden="true"
+        />
+      </div>
+
+      <ul
+        className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`}
+        role="menu"
+        id="menu"
+      >
+        {startLoaded ? (
+          <NavLink
+            pageId={startContent.attributes.Page_id}
+            text={startContent.attributes.Page_name}
+            key={startContent.attributes.Page_id}
             language={language}
             closeMobileMenu={closeMobileMenu}
-          /> 
-        </ul>
-      </nav>
-    );
-  }
-
+          />
+        ) : null}
+        {pricingLoaded ? (
+          <NavLink
+            pageId={pricingContent.attributes.Page_id}
+            text={pricingContent.attributes.Page_name}
+            key={pricingContent.attributes.Page_id}
+            language={language}
+            closeMobileMenu={closeMobileMenu}
+          />
+        ) : null}
+        {contactLoaded ? (
+          <NavLink
+            pageId={contactContent.attributes.Page_id}
+            text={contactContent.attributes.Page_name}
+            key={contactContent.attributes.Page_id}
+            language={language}
+            closeMobileMenu={closeMobileMenu}
+          />
+        ) : null}
+        {customPagesLoaded
+          ? customPagesContent.map((page, index) => (
+              <NavLink
+                pageId={page.attributes.Page_id}
+                text={page.attributes.Page_name}
+                key={index.toString()}
+                language={language}
+                closeMobileMenu={closeMobileMenu}
+              />
+            ))
+          : null}
+        <LanguageSelect
+          setLanguage={setLanguage}
+          language={language}
+          closeMobileMenu={closeMobileMenu}
+        />
+      </ul>
+    </nav>
+  );
+}
 
 export default Nav;
