@@ -61,31 +61,31 @@ function Nav({
         closeMobileMenu={closeMobileMenu}
       />
     ))}</>}
-
   
     return (
       <nav className={styles.navbar}>
         <Link to={`/?lang=${language}`}>
           <img
             src={logo}
-            alt="Spraakteknik"
+            alt="start"
             className={styles.logo}
             onClick={closeMobileMenu}
+            width="601px"
+            height="72px"
           />
         </Link>
 
-        <div className={styles.menuicon} onClick={handleClick}>
-          <i className={menuOpen ? "fas fa-times" : "fas fa-bars"} />
+        <div className={styles.menuicon} onClick={handleClick} role="button" aria-expanded={menuOpen} aria-controls="menu" aria-label="open menu">
+          <i className={menuOpen ? "fas fa-times" : "fas fa-bars"} aria-hidden="true"/>
         </div>
 
-        <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`}>
+        <ul className={`${styles.navmenu} ${menuOpen ? styles.active : ""}`} role="menu" id="menu">
            {navlinks}
           <LanguageSelect
             setLanguage={setLanguage}
             language={language}
             closeMobileMenu={closeMobileMenu}
-          />
-         
+          /> 
         </ul>
       </nav>
     );

@@ -4,7 +4,7 @@ import styles from "./NavLink.module.scss";
 
 function NavLink({ pageId, text, id, language, closeMobileMenu }) {
   return (
-    <li key={id}>
+    <li key={id} role="menuitem">
       <Link
         to={
           pageId === "start"

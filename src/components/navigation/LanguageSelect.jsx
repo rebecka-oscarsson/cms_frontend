@@ -12,7 +12,7 @@ function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
   const handleChange = (e) => {setLanguage(e.target.value); closeMobileMenu()};
 
   return (
-      <li className ={styles.languageselect}>
+      <div className ={styles.languageselect}>
       <label htmlFor="languages">Site language </label>
       <select
         name="languages"
@@ -26,7 +26,7 @@ function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
           </option>
         ))}
       </select>
-  </li>
+  </div>
   );
 }
 
