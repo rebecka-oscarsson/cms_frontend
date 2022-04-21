@@ -12,8 +12,6 @@
 
 .navmenu {
   list-style: none;
-  border-bottom: 1px solid $dark_color;
-  border-radius: 0 0 10px 10px;
   box-sizing: border-box;
   margin: 0;
   padding-left: 0;
@@ -28,21 +26,24 @@
   height: 0;
   transition: height 0.7s ease;
   background: $light_color;;
-  overflow-x: auto;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .navmenu.active {
+  border-bottom: 1px solid $dark_color;
+  border-radius: 0 0 10px 10px;
   height: calc(100vh - 80px);
   transition: height 0.7s ease;
   padding-bottom: 2em;
 }
 
 .menuicon {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   font-size: 1.8rem;
   cursor: pointer;
-  margin: 0 20px;
+  margin-right: 15px;
 }
 
 .fa-times {
@@ -51,8 +52,9 @@
 
 .logo {
   max-width: 35vw;
+  height:auto;
   justify-self: start;
-  margin: 0 10px;
+  margin-left: 15px;
   cursor: pointer;
 }
 
@@ -80,6 +82,8 @@
 
   .logo {
     max-width: 15vw;
-    margin: 20px 0 0 20px;
+    margin-left: 25px;
   }
+
+  .navbar a {display: flex;}
 }
