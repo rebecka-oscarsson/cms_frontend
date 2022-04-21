@@ -12,11 +12,11 @@
 }
 
 .navlink:hover {
-  background-color: tomato;
+  background-color: gold;
 }
 
 .navlink:active {
-  background-color: tomato;
+  background-color: gold;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,7 +33,7 @@
     transition: color 300ms;
   }
   .navlink:hover {
-    color: gold;
+    color: tomato;
     transition: color 300ms;
   }
   /* Fade in, Scale from center */
