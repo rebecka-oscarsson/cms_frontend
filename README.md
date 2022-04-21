@@ -1,3 +1,5 @@
 # spraakteknik
-Website for a translation business<br />
-Live version at: https://glittery-mousse-4ca3b5.netlify.app/?lang=en
+A website for a translation business<br />
+Deployed version at: https://glittery-mousse-4ca3b5.netlify.app/<br />
+CMS: strapi.io (deployed on Heroku)<br />
+
