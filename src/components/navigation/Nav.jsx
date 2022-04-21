@@ -7,7 +7,7 @@ import { useState } from "react";
 function Nav({
   setLanguage,
   language,
-  content,
+  customPagesContent,
   startContent,
   pricingContent,
   contactContent,
@@ -20,11 +20,11 @@ function Nav({
   };
 
   const everythingLoaded =
-    content &&
+    customPagesContent &&
     startContent &&
     pricingContent &&
     contactContent &&
-    Object.keys(content).length > 0 &&
+    Object.keys(customPagesContent).length > 0 &&
     Object.keys(startContent).length > 0 &&
     Object.keys(contactContent).length > 0 &&
     Object.keys(pricingContent).length > 0;
@@ -52,7 +52,7 @@ function Nav({
       language={language}
       closeMobileMenu={closeMobileMenu}
     />
-    {content.map((page, index) => (
+    {customPagesContent.map((page, index) => (
       <NavLink
         pageId={page.attributes.Page_id}
         text={page.attributes.Page_name}

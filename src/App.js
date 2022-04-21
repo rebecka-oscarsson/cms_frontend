@@ -18,7 +18,7 @@ function App() {
   let strapiUrl = process.env.REACT_APP_STRAPI_URL; //for testing with local instance of strapi specified in env-file
   strapiUrl = remoteUrl; //for testing the project locally using data from remote cms, comment out if using local cms
 
-  let pagesUrl = `${strapiUrl}pages/?sort=SortOrder&locale=${language}`;
+  let customPagesUrl = `${strapiUrl}pages/?sort=SortOrder&locale=${language}`;
   let startUrl = `${strapiUrl}start/?locale=${language}`;
   let pricingUrl = `${strapiUrl}pricing/?locale=${language}`;
   let contactUrl = `${strapiUrl}contact/?locale=${language}`;
@@ -26,9 +26,9 @@ function App() {
   const [startContent, startLoading, startError] = useFetch(startUrl);
   const [pricingContent, pricingLoading, pricingError] = useFetch(pricingUrl);
   const [contactContent, contactLoading, contactError] = useFetch(contactUrl);
-  const [content, loading, error] = useFetch(pagesUrl);
+  const [customPagesContent, customPagesLoading, customPagesError] = useFetch(customPagesUrl);
 
-  
+
   useEffect(() => {
     localStorage.setItem("language", language);
     if (searchParams.get("lang") !== language) {
@@ -43,15 +43,15 @@ function App() {
         <Nav
           setLanguage={setLanguage}
           language={language}
-          content={content}
+          customPagesContent={customPagesContent}
           startContent={startContent}
           contactContent={contactContent}
           pricingContent={pricingContent}
         />
         <PageRoutes
-          content={content}
-          loading={loading}
-          error={error}
+          customPagesContent={customPagesContent}
+          customPagesLoading={customPagesLoading}
+          customPagesError={customPagesError}
           startContent={startContent}
           startLoading={startLoading}
           startError={startError}

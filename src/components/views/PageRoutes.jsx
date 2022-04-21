@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { Start, Pricing, Contact, Page, Error, Spinner } from "../../index";
 
 function PageRoutes({
-  content,
-  loading,
-  error,
+  customPagesContent,
+  customPagesLoading,
+  customPagesError,
   startContent,
   startLoading,
   startError,
@@ -52,8 +52,8 @@ function PageRoutes({
             />
           }
         />
-        {content && Object.keys(content).length > 0
-          ? content.map((page, index) => (
+        {customPagesContent && Object.keys(customPagesContent).length > 0
+          ? customPagesContent.map((page, index) => (
               <Route
                 path={`/${page.attributes.Page_id}`}
                 key={index.toString()}
@@ -61,14 +61,14 @@ function PageRoutes({
                   <Page
                     pageName={page.attributes.Page_name}
                     content={page.attributes.Content}
-                    loading={loading}
-                    error={error}
+                    customPagesLoading={customPagesLoading}
+                    customPagesError={customPagesError}
                   />
                 }
               />
             ))
           : null}
-          {content && Object.keys(content).length > 0
+          {customPagesContent && Object.keys(customPagesContent).length > 0
           ? <Route path="*" element={<Error />} />: <Route path="*" element={<Spinner />} />}
       </Routes>
     </>
