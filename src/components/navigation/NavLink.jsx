@@ -1,23 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./NavLink.module.scss";
 
-function NavLink({ pageId, text, id, language, closeMobileMenu }) {
+function NavBarLink({ pageId, text, id, language, closeMobileMenu }) {
   return (
     <li key={id} role="menuitem">
-      <Link
+      <NavLink
         to={
           pageId === "start"
             ? `/?lang=${language}`
             : `/${pageId}?lang=${language}`
         }
         onClick={closeMobileMenu}
-        className={styles.navlink}
+        // className={styles.navlink}
+        className={({ isActive }) => (isActive ? styles.navlinkactive : styles.navlink)}
       >
         {text}
-      </Link>
+      </NavLink>
     </li>
   );
 }
 
-export default NavLink;
+export default NavBarLink;
