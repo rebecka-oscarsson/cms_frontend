@@ -1,6 +1,6 @@
 import styles from "./Nav.module.scss";
 import { NavLink, LanguageSelect } from "../../index";
-import logo from "../../images/Spraakteknik.png";
+import logo from "../../images/logoipsum.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

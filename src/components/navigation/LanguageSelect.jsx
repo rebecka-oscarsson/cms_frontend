@@ -5,8 +5,6 @@ function LanguageSelect({ setLanguage, language, closeMobileMenu }) {
   const languages = [
     { code: "en", name: "english" },
     { code: "sv", name: "svenska" },
-    { code: "nl", name: "nederlands" },
-    { code: "fr", name: "français" },
   ];
 
   const handleChange = (e) => {setLanguage(e.target.value); closeMobileMenu()};
