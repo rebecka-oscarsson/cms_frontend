@@ -26,7 +26,7 @@ function Start({ content, loading, error, language }) {
             <h1>{content.attributes.Headline}</h1>
             <p>{content.attributes.Presentation}</p>
           </div>
-          <Link to={`/pricing?lang=${language}`}>
+          <Link to={`/info?lang=${language}`}>
             <button className={styles.linkbutton}>
               {content.attributes.Button_text}
             </button>
