@@ -1,8 +1,8 @@
-# Spraakteknik
-A website for a translation business<br />
-Deployed version at: https://glittery-mousse-4ca3b5.netlify.app/<br />
-Framework: React
-CMS: strapi.io (deployed on Heroku)<br />
+# Headless CMS website
+Deployed at: https://glittery-mousse-4ca3b5.netlify.app/<br />
+Framework: React<br />
+CMS: strapi.io<br />
+React Helmet used for improved SEO and accessibility
 
 ## Dependencies
 React Router DOM 6<br />
